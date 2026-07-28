@@ -6,7 +6,7 @@ let x = 0
 let y = 0
 
 // Box element:
-
+const box = document.querySelector("#box")
 
 //PSEDUO CODE:
 
