@@ -1,15 +1,25 @@
 // Movable object:
 
+//Position for element:
+
+let x = 0
+let y = 0
+
 //PSEDUO CODE:
 
+
+//Listens to event from document, when key is pressed down enable function, if keys are pressed move x y from orginal place.
 document.addEventListener("keydown", (e) => {
-    if (e.key === "up")
+    if (e.key === "Arrowup")
     // PSEDUO { move element up }
-    else if (e.key === "down")
+    else if (e.key === "Arrowdown")
     // PSEDUO { move element down }
-     else if (e.key === "right")
+     else if (e.key === "ArrowRight")
     // PSEDUO { move element right }
-     else if (e.key === "left")
+     else if (e.key === "ArrowLeft")
     // PSEDUO { move element left }
 })
 
+document.addEventListener("click", (e) {
+    //Move element to clickable place
+})
