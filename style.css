@@ -1,4 +1,7 @@
 #box {
+  position: absolute;
+  left: 0;
+  right: 0;
   width: 100px;
   height: 100px;
   background-color: #953e3e;
