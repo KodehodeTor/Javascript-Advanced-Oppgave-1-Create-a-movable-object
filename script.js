@@ -7,7 +7,7 @@ let y = 0;
 // Box element:
 const box = document.querySelector("#box");
 
-//Listens to key event from document, when key is pressed down enable function, if keys are pressed move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 10 pixels for each key stroke.
+//Listens to key event from document, when key is pressed down enable function; move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 20 pixels for each key stroke.
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowUp") {
