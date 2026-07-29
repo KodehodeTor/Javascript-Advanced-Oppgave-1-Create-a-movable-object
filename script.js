@@ -1,14 +1,17 @@
 // Movable object:
 
-//Position for element:
+// Position for element:
 let x = 0;
 let y = 0;
 
-//Position for walls
+// Size of one movement tile.
+const TILE_SIZE = 100;
+
+// Position for walls
 const walls = [
-  { x: 40, y: 0 },
-  { x: 60, y: 0 },
-  { x: 80, y: 0 },
+  { x: TILE_SIZE, y: 0 },
+  { x: TILE_SIZE * 2, y: 0 },
+  { x: TILE_SIZE * 3, y: 0 },
 ];
 
 // Box element:
@@ -22,13 +25,13 @@ document.addEventListener("keydown", (e) => {
 
   //Listens to key event from document, when key is pressed down enable function; move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 20 pixels for each key stroke.
   if (e.key === "ArrowUp") {
-    newY -= 20;
+    newY -= TILE_SIZE;
   } else if (e.key === "ArrowDown") {
-    newY += 20;
+    newY += TILE_SIZE;
   } else if (e.key === "ArrowRight") {
-    newX += 20;
+    newX += TILE_SIZE;
   } else if (e.key === "ArrowLeft") {
-    newX -= 20;
+    newX -= TILE_SIZE;
   }
 
   //Wall hit set as false standard
