@@ -15,6 +15,16 @@ const walls = [
   { x: 80, y: 0 },
 ];
 
+//Wall hit set as false standard
+let hitWall = false;
+
+//Loop that checks if next position is a wall or not. If its wall, set hitWall to true.
+for (let wall of walls) {
+  if (wall.x === newX && wall.y === newY) {
+    hitWall = true;
+  }
+}
+
 // Box element:
 const box = document.querySelector("#box");
 
