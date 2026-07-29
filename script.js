@@ -11,13 +11,13 @@ const box = document.querySelector("#box");
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowUp") {
-    y -= 10;
+    y -= 20;
   } else if (e.key === "ArrowDown") {
-    y += 10;
+    y += 20;
   } else if (e.key === "ArrowRight") {
-    x += 10;
+    x += 20;
   } else if (e.key === "ArrowLeft") {
-    x -= 10;
+    x -= 20;
   }
 
   //We grab the element box, as a HTML element we access .style property and move it left/right/up/down from the loop above. We have the variables x and y above and move box accordingly to buttons being pressed.
