@@ -9,9 +9,43 @@ const TILE_SIZE = 100;
 
 // Position for walls
 const walls = [
-  { x: TILE_SIZE, y: 0 },
-  { x: TILE_SIZE * 2, y: 0 },
-  { x: TILE_SIZE * 3, y: 0 },
+  //Outside of bound:
+  { x: -TILE_SIZE, y: 0 },
+  { x: 0, y: -TILE_SIZE },
+  { x: -TILE_SIZE, y: -TILE_SIZE },
+  { x: TILE_SIZE, y: -TILE_SIZE },
+
+  // Row 1
+  { x: TILE_SIZE * 2, y: TILE_SIZE * 0 },
+  { x: TILE_SIZE * 3, y: TILE_SIZE * 0 },
+  { x: TILE_SIZE * 4, y: TILE_SIZE * 0 },
+  { x: TILE_SIZE * 5, y: TILE_SIZE * 0 },
+  { x: TILE_SIZE * 6, y: TILE_SIZE * 0 },
+
+  // Row 2
+  { x: TILE_SIZE * 0, y: TILE_SIZE * 1 },
+  { x: TILE_SIZE * 6, y: TILE_SIZE * 1 },
+
+  // Row 3
+  { x: TILE_SIZE * 0, y: TILE_SIZE * 2 },
+  { x: TILE_SIZE * 2, y: TILE_SIZE * 2 },
+  { x: TILE_SIZE * 3, y: TILE_SIZE * 2 },
+  { x: TILE_SIZE * 4, y: TILE_SIZE * 2 },
+  { x: TILE_SIZE * 6, y: TILE_SIZE * 2 },
+
+  // Row 4
+  { x: TILE_SIZE * 0, y: TILE_SIZE * 3 },
+  { x: TILE_SIZE * 4, y: TILE_SIZE * 3 },
+  { x: TILE_SIZE * 6, y: TILE_SIZE * 3 },
+
+  // Row 5
+  { x: TILE_SIZE * 0, y: TILE_SIZE * 4 },
+  { x: TILE_SIZE * 1, y: TILE_SIZE * 4 },
+  { x: TILE_SIZE * 2, y: TILE_SIZE * 4 },
+  { x: TILE_SIZE * 3, y: TILE_SIZE * 4 },
+  { x: TILE_SIZE * 4, y: TILE_SIZE * 4 },
+  { x: TILE_SIZE * 5, y: TILE_SIZE * 4 },
+  { x: TILE_SIZE * 6, y: TILE_SIZE * 4 },
 ];
 
 // Box element:
@@ -98,3 +132,5 @@ for (let wall of walls) {
   //Adding the wall to the webpage.
   document.body.appendChild(wallElement);
 }
+
+//Future plans; Make so the box cant move outside of the screen.
