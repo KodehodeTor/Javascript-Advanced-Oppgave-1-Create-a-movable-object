@@ -51,7 +51,7 @@ const walls = [
 // Box element:
 const box = document.querySelector("#box");
 
-// Arrow functions and walls:
+// Arrow function:
 document.addEventListener("keydown", (e) => {
   //Temporary variable
   let newX = x;
@@ -85,6 +85,8 @@ document.addEventListener("keydown", (e) => {
   }
 
   //We grab the element box, as a HTML element we access .style property and move it left/right/up/down from the loop above. We have the variables x and y above and move box accordingly to buttons being pressed.
+
+  //CSS properties like left and top expect it to be a string.
   box.style.left = x + "px";
   box.style.top = y + "px";
 });
@@ -112,7 +114,7 @@ document.addEventListener("click", (e) => {
     x = targetX;
     y = targetY;
 
-    // Move element to clickable place by using .style as before, CSS properties like left and top expect it to be a string.
+    // Move element to clickable place by using .style as before.
     box.style.left = x + "px";
     box.style.top = y + "px";
   }
