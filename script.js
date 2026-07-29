@@ -4,10 +4,6 @@
 let x = 0;
 let y = 0;
 
-//Temporary variable
-let newX = x;
-let newY = y;
-
 //Position for walls
 const walls = [
   { x: 40, y: 0 },
@@ -15,28 +11,16 @@ const walls = [
   { x: 80, y: 0 },
 ];
 
-//Wall hit set as false standard
-let hitWall = false;
-
-//Loop that checks if next position is a wall or not. If its wall, set hitWall to true.
-for (let wall of walls) {
-  if (wall.x === newX && wall.y === newY) {
-    hitWall = true;
-  }
-}
-
-//If there is no wall, new X and Y position is set to new position. Otherwise the element dont move.
-if (!hitWall) {
-  x = newX;
-  y = newY;
-}
-
 // Box element:
 const box = document.querySelector("#box");
 
-//Listens to key event from document, when key is pressed down enable function; move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 20 pixels for each key stroke.
-
+// Arrow functions and walls:
 document.addEventListener("keydown", (e) => {
+  //Temporary variable
+  let newX = x;
+  let newY = y;
+
+  //Listens to key event from document, when key is pressed down enable function; move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 20 pixels for each key stroke.
   if (e.key === "ArrowUp") {
     newY -= 20;
   } else if (e.key === "ArrowDown") {
@@ -45,6 +29,22 @@ document.addEventListener("keydown", (e) => {
     newX += 20;
   } else if (e.key === "ArrowLeft") {
     newX -= 20;
+  }
+
+  //Wall hit set as false standard
+  let hitWall = false;
+
+  //Loop that checks if next position is a wall or not. If its wall, set hitWall to true.
+  for (let wall of walls) {
+    if (wall.x === newX && wall.y === newY) {
+      hitWall = true;
+    }
+  }
+
+  //If there is no wall, new X and Y position is set to new position. Otherwise the element dont move.
+  if (!hitWall) {
+    x = newX;
+    y = newY;
   }
 
   //We grab the element box, as a HTML element we access .style property and move it left/right/up/down from the loop above. We have the variables x and y above and move box accordingly to buttons being pressed.
