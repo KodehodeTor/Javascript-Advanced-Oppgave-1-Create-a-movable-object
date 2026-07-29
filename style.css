@@ -1,12 +1,37 @@
+/* Yin Yang Shape via Alexander Futekov */
+
 #box {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #eee;
+  border-color: rgb(12, 12, 12);
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+}
+#box:before {
+  content: "";
   position: absolute;
+  top: 50%;
   left: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  background-color: #953e3e;
-  border: 2px solid #333333;
-  padding: 20px;
-  margin: 15px;
-  box-sizing: border-box;
+  background: #eee;
+  border: 18px solid rgb(8, 8, 8);
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+#box:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgb(5, 5, 5);
+  border: 18px solid #eee;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
 }
