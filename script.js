@@ -25,6 +25,12 @@ for (let wall of walls) {
   }
 }
 
+//If there is no wall, new X and Y position is set to new position. Otherwise the element dont move.
+if (!hitWall) {
+  x = newX;
+  y = newY;
+}
+
 // Box element:
 const box = document.querySelector("#box");
 
