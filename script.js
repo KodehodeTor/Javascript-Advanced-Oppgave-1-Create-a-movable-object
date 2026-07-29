@@ -55,27 +55,46 @@ document.addEventListener("keydown", (e) => {
   box.style.top = y + "px";
 });
 
+// Mouse function:
+
 // Listens to click event from document, when the mouse is clicked the box is moving the the selected position.
 document.addEventListener("click", (e) => {
   // e.pageX and e.pageY holds the exact horizontal and vertical coordinates of the mouse on the webpage.
-  // box.offsetWidth and height is the box size. We divide in half to find the center of the box.
-  const targetX = e.pageX - box.offsetWidth / 2;
-  const targetY = e.pageY - box.offsetHeight / 2;
+  // Math floor snaps it to the nearest 100x100 tile
+  const targetX = Math.floor(e.pageX / TILE_SIZE) * TILE_SIZE;
+  const targetY = Math.floor(e.pageY / TILE_SIZE) * TILE_SIZE;
 
-  // Move element to clickable place by using .style as before, we use template literals to get both the position and px, due to CSS properties like left and top expect it to be a string.
-  box.style.left = `${targetX}px`;
-  box.style.top = `${targetY}px`;
+  // Wall hit set to false as standard
+  let hitWall = false;
+
+  // Loop through walls, check if the clicked position matches a wall position
+  for (let wall of walls) {
+    if (wall.x === targetX && wall.y === targetY) {
+      hitWall = true;
+    }
+  }
+  // If the moved position isnt a wall, update the players position.
+  if (!hitWall) {
+    x = targetX;
+    y = targetY;
+
+    // Move element to clickable place by using .style as before, CSS properties like left and top expect it to be a string.
+    box.style.left = x + "px";
+    box.style.top = y + "px";
+  }
 });
 
 // Visible walls array:
 
+//Loops through walls and create a new div element for each wall.
 for (let wall of walls) {
   const wallElement = document.createElement("div");
 
+  //Give the div wall class so we can customize it.
   wallElement.classList.add("wall");
-
+  //Positioning of the wall using x / y
   wallElement.style.left = wall.x + "px";
   wallElement.style.top = wall.y + "px";
-
+  //Adding the wall to the webpage.
   document.body.appendChild(wallElement);
 }
