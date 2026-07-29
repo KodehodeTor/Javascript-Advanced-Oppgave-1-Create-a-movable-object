@@ -63,3 +63,16 @@ document.addEventListener("click", (e) => {
   box.style.left = `${targetX}px`;
   box.style.top = `${targetY}px`;
 });
+
+// Visible walls array:
+
+for (let wall of walls) {
+  const wallElement = document.createElement("div");
+
+  wallElement.classList.add("wall");
+
+  wallElement.style.left = wall.x + "px";
+  wallElement.style.top = wall.y + "px";
+
+  document.body.appendChild(wallElement);
+}
