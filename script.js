@@ -57,7 +57,7 @@ document.addEventListener("keydown", (e) => {
   let newX = x;
   let newY = y;
 
-  //Listens to key event from document, when key is pressed down enable function; move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 20 pixels for each key stroke.
+  //Listens to key event from document, when key is pressed down enable function; move x y from orginal place. Start position is 0,0 X = how far from left side, Y = how far from the top. The box moves by 100px / 1 tile for each key stroke.
   if (e.key === "ArrowUp") {
     newY -= TILE_SIZE;
   } else if (e.key === "ArrowDown") {
@@ -126,11 +126,13 @@ for (let wall of walls) {
 
   //Give the div wall class so we can customize it.
   wallElement.classList.add("wall");
+
   //Positioning of the wall using x / y
   wallElement.style.left = wall.x + "px";
   wallElement.style.top = wall.y + "px";
+
   //Adding the wall to the webpage.
   document.body.appendChild(wallElement);
 }
 
-//Future plans; Make so the box cant move outside of the screen.
+//Future plans; Make so the box cant move outside of the screen and more walls.
