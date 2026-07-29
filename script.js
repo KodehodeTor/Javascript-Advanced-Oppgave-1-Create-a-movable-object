@@ -4,6 +4,17 @@
 let x = 0;
 let y = 0;
 
+//Temporary variable
+let newX = x;
+let newY = y;
+
+//Position for walls
+const walls = [
+  { x: 40, y: 0 },
+  { x: 60, y: 0 },
+  { x: 80, y: 0 },
+];
+
 // Box element:
 const box = document.querySelector("#box");
 
@@ -11,13 +22,13 @@ const box = document.querySelector("#box");
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowUp") {
-    y -= 20;
+    newY -= 20;
   } else if (e.key === "ArrowDown") {
-    y += 20;
+    newY += 20;
   } else if (e.key === "ArrowRight") {
-    x += 20;
+    newX += 20;
   } else if (e.key === "ArrowLeft") {
-    x -= 20;
+    newX -= 20;
   }
 
   //We grab the element box, as a HTML element we access .style property and move it left/right/up/down from the loop above. We have the variables x and y above and move box accordingly to buttons being pressed.
